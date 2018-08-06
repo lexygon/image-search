@@ -18,15 +18,6 @@ class DefaultController extends Controller
     /**
      * @param Request $request
      * @return Response
-     */
-    public function index(Request $request) : Response
-    {
-        return new Response("YAY !", 200);
-    }
-
-    /**
-     * @param Request $request
-     * @return Response
      * @throws \Exception
      */
     public function search(Request $request) : Response
