@@ -21,5 +21,4 @@ public/tmp/originals/*.png
 public/tmp/originals/*.jpg
 public/tmp/originals/*.gif
 public/tmp/originals/*.bmp
-.idea
 .vscode
