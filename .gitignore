@@ -1,0 +1,23 @@
+
+###> symfony/framework-bundle ###
+/.env
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+###< phpunit/phpunit ###
+
+public/zip/*.zip
+public/tmp/augmenteds/*.jpeg
+public/tmp/originals/*.jpeg
+public/tmp/originals/*.png
+public/tmp/originals/*.jpg
+public/tmp/originals/*.gif
+public/tmp/originals/*.bmp

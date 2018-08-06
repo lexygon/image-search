@@ -1,0 +1,30 @@
+imports:
+    - { resource: search_engines.yaml }
+    - { resource: file_services.yaml }
+
+parameters:
+    ORIGINAL_FILE_PATH: /originals/
+    AUGMENTED_FILE_PATH: /augmenteds/
+    TEMP_DIR: /tmp
+    FLICKR_API_KEY: 4f95de3c011dd7d7f3348ee84a167ea6
+    FLICKR_API_SECRET: 3391e6d405076e17
+    GOOGLE_CX: 014206623427955286335:j1o4zihjhbi
+    GOOGLE_API_KEY: AIzaSyBWQxhN1KcrtGhnxv5iIka42p_dFzdQh7U
+    RESULT_LIMIT: 10
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    image_service:
+        class: App\Service\Image\ImageService

@@ -1,0 +1,18 @@
+parameters:
+
+services:
+  App\Service\SearchEngine\BaseSearchEngine:
+    abstract:  true
+    public: true
+    arguments: ['@service_container' ]
+
+  search.google_image:
+    class: App\Service\SearchEngine\GoogleImageSearchEngine
+    parent: App\Service\SearchEngine\BaseSearchEngine
+
+  search.flickr:
+    class: App\Service\SearchEngine\FlickrSearchEngine
+    parent: App\Service\SearchEngine\BaseSearchEngine
+
+# Add your own search engines that extends "BaseSearchEngine" class.
+# Service names must start with "search." for security issues !!!

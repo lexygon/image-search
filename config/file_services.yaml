@@ -1,0 +1,25 @@
+parameters:
+
+
+services:
+
+  App\Service\File\BaseFileService:
+    abstract:  true
+    public: true
+    arguments: ['@service_container' ]
+
+  file_downloader:
+    class: App\Service\File\Downloader
+    parent: App\Service\File\BaseFileService
+
+  file_compressor:
+    class: App\Service\File\Compressor
+    parent: App\Service\File\BaseFileService
+
+  file_service:
+    class: App\Service\File\FileService
+    parent: App\Service\File\BaseFileService
+
+  image_processor:
+    class: App\Service\File\ImageProcessor
+    parent: App\Service\File\BaseFileService
